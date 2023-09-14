@@ -1,4 +1,5 @@
 import {todo} from "node:test";
+import { ITask } from "./types/task";
 
 const baseUrl = "http://localhost:3001";
 
@@ -8,7 +9,7 @@ export const getAllTodos = async () => {
   return todos;
 };
 
-export const addTodo = async (todo) => {
+export const addTodo = async (todo:ITask) => {
   const res = await fetch(`${baseUrl}/tasks`, {
     method: "POST",
     headers: {
@@ -20,7 +21,7 @@ export const addTodo = async (todo) => {
   return newTodo;
 };
 
-export const editTodo = async (todo) => {
+export const editTodo = async (todo:ITask) => {
   const res = await fetch(`${baseUrl}/tasks/${todo.id}`, {
     method: "PUT",
     headers: {
@@ -32,7 +33,7 @@ export const editTodo = async (todo) => {
   return updatedTodo;
 };
 
-export const deleteTodo = async (id) => {
+export const deleteTodo = async (id:any) => {
   await fetch(`${baseUrl}/tasks/${id}`, {
     method: "Delete"
   });

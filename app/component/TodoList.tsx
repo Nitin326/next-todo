@@ -1,7 +1,7 @@
 import React from "react";
 import Task from "./Task";
 
-const TodoList = ({tasks}) => {
+const TodoList = ({tasks}:any) => {
   return (
     <>
       <div className="overflow-x-auto">
@@ -16,7 +16,7 @@ const TodoList = ({tasks}) => {
             </tr>
           </thead>
           <tbody>
-            {tasks.map((task, index) => (
+            {tasks.map((task:any, index:any) => (
               <Task task={task} />
             ))}
           </tbody>
